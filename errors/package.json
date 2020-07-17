@@ -1,0 +1,23 @@
+{
+  "name": "@bigoncloud/errors",
+  "version": "1.0.1",
+  "description": "Collection of commonly used error classes",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && tsc",
+    "publish": "git add . && git commit -m \"updates\" && yarn build && npm version patch && npm publish --access public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express-validator": "^6.6.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.7"
+  }
+}
