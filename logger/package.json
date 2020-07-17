@@ -1,0 +1,24 @@
+{
+  "name": "@bigoncloud/logger",
+  "version": "1.0.1",
+  "description": "Wrapper for winston logger",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && tsc",
+    "publish": "git add . && git commit -m \"updates\" && yarn build && npm version patch && npm publish --access public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.7"
+  }
+}
