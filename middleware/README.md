@@ -8,7 +8,17 @@ This collection of middlewares can:
  - check if user have authorization
  - validate imcoming requests
 
+# Quick start
+First, run npm install @bigoncloud/middleware --save for your app. Then in your Express app, if you want to load the common middleware function:
+
+
+```js
+const { commonMiddleware } = require('@bigoncloud/middleware')
+```
+
 # Important
+It's best to use `commonMiddleware` early in your middleware stack, so that `cors`, `helmet`, `compression`, `morgan` and `cookie-sessions` are set
+
 The environment variable names supported are:
 ### NODE_ENV
 During **development** morgan, the HTTP request logger middleware will active
