@@ -1,6 +1,6 @@
 {
   "name": "@bigoncloud/middleware",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Collection of commonly used middlewares",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn clean && tsc",
-    "pub": "git add . && git commit -m \"updates\" && yarn build && npm version patch && npm publish --access public"
+    "pub": "yarn build && npm version patch && npm publish --access public"
   },
   "license": "MIT",
   "dependencies": {
