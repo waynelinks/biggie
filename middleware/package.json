@@ -1,0 +1,38 @@
+{
+  "name": "@bigoncloud/middleware",
+  "version": "1.0.0",
+  "description": "Collection of commonly used middlewares",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && tsc",
+    "publish": "git add . && git commit -m \"updates\" && yarn build && npm version patch && npm publish --access public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@bigoncloud/errors": "^1.0.1",
+    "compression": "^1.7.4",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/cookie-session": "^2.0.41",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.7",
+    "@types/helmet": "^0.0.47",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/morgan": "^1.9.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.7"
+  }
+}
