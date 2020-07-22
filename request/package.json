@@ -1,13 +1,8 @@
 {
   "name": "@bigoncloud/request",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "main": "dist/index.js",
-  "license": "MIT",
-=======
   "description": "Wrapper around supertest",
   "main": "dist/index.js",
->>>>>>> request
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**/*"
@@ -17,10 +12,7 @@
     "build": "yarn clean && tsc",
     "pub": "yarn build && npm version patch && npm publish --access public"
   },
-<<<<<<< HEAD
-=======
   "license": "MIT",
->>>>>>> request
   "devDependencies": {
     "@types/supertest": "^2.0.10",
     "rimraf": "^3.0.2",
