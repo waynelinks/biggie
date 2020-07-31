@@ -38,19 +38,3 @@ const logger = createLogger({
   exceptionHandlers: [new DailyRotateFile(options.file)],
   exitOnError: false
 })
-
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(
-    new transports.Console({
-      level: 'info',
-      format: format.combine(
-        format.colorize(),
-        format.printf(
-          (info) => `${info.timestamp} ${info.level}: ${info.message}`,
-        ),
-      ),
-    }),
-  )
-}
-
-export { logger }
