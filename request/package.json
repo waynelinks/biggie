@@ -1,6 +1,6 @@
 {
   "name": "@bigoncloud/request",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Wrapper around supertest",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
@@ -14,9 +14,13 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.7",
     "@types/supertest": "^2.0.10",
     "rimraf": "^3.0.2",
     "supertest": "^4.0.2",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
