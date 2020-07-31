@@ -1,6 +1,7 @@
 import request from 'supertest'
+import { Express } from 'express'
 
-export const test = (app: any, url: string, data: string | object, statusCode: number) => {
+export const test = (app: Express, url: string, data: string | object, statusCode: number) => {
   return request(app)
     .post(url)
     .send(data)
