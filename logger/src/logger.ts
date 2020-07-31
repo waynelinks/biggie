@@ -1,42 +1,43 @@
 import { createLogger, format, transports } from 'winston'
+import DailyRotateFile from 'winston-daily-rotate-file'
+
+import fs from 'fs'
+import path from 'path'
 
 const env = process.env.NODE_ENV || 'development'
 
-const logger = createLogger({
-  level: env === 'development' ? 'debug' : 'info',
-  format: format.combine(
-    format.timestamp({
-      format: 'YYYY-MM-DD HH:mm:ss',
-    }),
-    format.json(),
-    format.errors({ stack: true }),
-    format.splat(),
-  ),
-  defaultMeta: { service: process.env.SERVICE },
-  transports: [
-    new transports.File({
-      filename: 'error.log',
-      level: 'error',
-    }),
-    new transports.File({ filename: 'combined.log' }),
-  ],
-  exceptionHandlers: [
-    new transports.File({ filename: 'uncaughtExceptions.log' }),
-  ],
-})
+let dir = './logs'
+if (!dir) dir = path.resolve('logs')
 
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(
-    new transports.Console({
-      level: 'info',
-      format: format.combine(
-        format.colorize(),
-        format.printf(
-          (info) => `${info.timestamp} ${info.level}: ${info.message}`,
-        ),
-      ),
-    }),
-  )
+if (!fs.existsSync(dir)) fs.mkdirSync(dir)
+
+const options = {
+  file: {
+    level: env === 'development' ? 'debug' : 'warn',
+    filename: dir + '/%DATE%.log',
+    datePattern: 'YYYY-MM-DD',
+    zippedArchive: true,
+    timestamp: true,
+    handleExceptions: true,
+    humanReadableUnhandledException: true,
+    prettyPrint: true,
+    json: true,
+    maxSize: '20m',
+    colorize: true,
+    maxFiles: '14d',
+  },
 }
 
-export { logger }
+export default createLogger({
+  transports: [
+    new transports.Console({
+      level: env === 'development' ? 'debug' : 'warn',
+      format: format.combine(
+        format.errors({ stack: true }),
+        format.prettyPrint(),
+      ),
+    }),
+  ],
+  exceptionHandlers: [new DailyRotateFile(options.file)],
+  exitOnError: false,
+})
