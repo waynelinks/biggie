@@ -1,2 +1,2 @@
-declare const _default: import("winston").Logger;
-export default _default;
+declare const logger: import("winston").Logger;
+export { logger };
