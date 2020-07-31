@@ -38,3 +38,5 @@ const logger = createLogger({
   exceptionHandlers: [new DailyRotateFile(options.file)],
   exitOnError: false
 })
+
+export { logger }
