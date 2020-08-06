@@ -4,17 +4,16 @@ exports.DbConnectionError = void 0;
 const CustomError_1 = require("./CustomError");
 const responseCodes_1 = require("./responseCodes");
 class DbConnectionError extends CustomError_1.CustomError {
-    constructor(message) {
+    constructor(message = 'Error connecting to database') {
         super(message);
         this.message = message;
         this.statusCode = responseCodes_1.INTERNAL_SERVER_ERROR;
-        this.reason = 'Error connecting to database';
         Object.setPrototypeOf(this, DbConnectionError.prototype);
     }
     serializeErrors() {
         return [
             {
-                message: this.message ? this.message : this.reason,
+                message: this.message,
             },
         ];
     }
