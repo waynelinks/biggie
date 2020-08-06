@@ -6,8 +6,8 @@ export class DbConnectionError extends CustomError {
 
   reason = 'Error connecting to database'
 
-  constructor() {
-    super('Error connecting to database')
+  constructor(public message: string) {
+    super(message)
 
     Object.setPrototypeOf(this, DbConnectionError.prototype)
   }
@@ -15,7 +15,7 @@ export class DbConnectionError extends CustomError {
   serializeErrors() {
     return [
       {
-        message: this.reason,
+        message: this.message ? this.message: this.reason,
       },
     ]
   }
