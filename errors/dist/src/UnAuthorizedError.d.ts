@@ -1,8 +1,8 @@
 import { CustomError } from './CustomError';
 export declare class UnAuthorizedError extends CustomError {
+    message: string;
     statusCode: number;
-    reason: string;
-    constructor();
+    constructor(message?: string);
     serializeErrors(): {
         message: string;
     }[];
