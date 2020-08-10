@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn clean && tsc",
-    "pub": "npm version patch && git add . && git commit -m \"updates\" && yarn build && npm publish --access public "
+    "pub": "npm version patch && git add . && git commit -m \"updates\" && yarn build "
   },
   "license": "MIT",
   "dependencies": {
