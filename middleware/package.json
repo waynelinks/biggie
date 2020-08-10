@@ -1,6 +1,6 @@
 {
   "name": "@bigoncloud/middleware",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Collection of commonly used middlewares",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
