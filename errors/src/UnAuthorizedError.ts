@@ -4,10 +4,8 @@ import { UNAUTHORIZED } from './responseCodes'
 export class UnAuthorizedError extends CustomError {
   statusCode = UNAUTHORIZED
 
-  reason = 'Not Authorized!'
-
-  constructor() {
-    super('Not Authorized!')
+  constructor(public message: string = 'Not Authorized!') {
+    super(message)
 
     Object.setPrototypeOf(this, UnAuthorizedError.prototype)
   }
@@ -15,7 +13,7 @@ export class UnAuthorizedError extends CustomError {
   serializeErrors() {
     return [
       {
-        message: this.reason,
+        message: this.message,
       },
     ]
   }

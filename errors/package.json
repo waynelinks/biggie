@@ -1,6 +1,6 @@
 {
   "name": "@bigoncloud/errors",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Collection of commonly used error classes",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn clean && tsc",
-    "pub": "git add . && git commit -m \"updates\" && yarn build && npm version patch"
+    "pub": "npm version patch && git add . && git commit -m \"updates\" && yarn build"
   },
   "license": "MIT",
   "dependencies": {
