@@ -3,9 +3,9 @@ import { verify } from 'jsonwebtoken'
 
 interface UserPayload {
   id: string
-  firstname: string
-  lastname: string
+  name: string
   email: string
+  role: string
 }
 
 declare global {
