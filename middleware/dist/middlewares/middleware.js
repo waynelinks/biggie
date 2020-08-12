@@ -3,13 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.commonMiddleware = void 0;
+exports.middleware = void 0;
 const cors_1 = __importDefault(require("cors"));
 const helmet_1 = __importDefault(require("helmet"));
 const compression_1 = __importDefault(require("compression"));
 const morgan_1 = __importDefault(require("morgan"));
 const cookie_session_1 = __importDefault(require("cookie-session"));
-exports.commonMiddleware = (app, express) => {
+exports.middleware = (app, express) => {
     app.set('trust proxy', true);
     app.use(express.json({ limit: '10kb' }));
     app.use(express.urlencoded({ extended: true }));

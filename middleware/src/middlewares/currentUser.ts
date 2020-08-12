@@ -28,7 +28,7 @@ export const currentUser = (contract: any) => (
   try {
     const payload = verify(
       req.session.jwt,
-      process.env.JWT_SECRET!,
+      process.env.ACCESS_TOKEN_SECRET!,
     ) as UserPayload.IShape
 
     req.currentUser = payload

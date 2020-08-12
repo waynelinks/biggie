@@ -1,1 +1,1 @@
-export declare const commonMiddleware: (app: any, express: any) => void;
+export declare const middleware: (app: any, express: any) => void;
