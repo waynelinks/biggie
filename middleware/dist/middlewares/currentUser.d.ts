@@ -1,16 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
-interface UserPayload {
-    id: string;
-    name: string;
-    email: string;
-    role: string;
-}
 declare global {
     namespace Express {
         interface Request {
-            currentUser?: UserPayload;
+            currentUser?: UserPayload.IShape;
         }
     }
 }
-export declare const currentUser: (req: Request, res: Response, next: NextFunction) => void;
-export {};
+export declare const currentUser: (contract: any) => (req: Request, res: Response, next: NextFunction) => void;

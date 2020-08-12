@@ -4,7 +4,7 @@ import compression from 'compression'
 import morgan from 'morgan'
 import cookieSession from 'cookie-session'
 
-export const commonMiddleware = (app: any, express: any) => {
+export const middleware = (app: any, express: any) => {
   app.set('trust proxy', true)
   app.use(express.json({ limit: '10kb' }))
   app.use(express.urlencoded({ extended: true }))

@@ -1,6 +1,6 @@
 {
   "name": "@bigoncloud/middleware",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Collection of commonly used middlewares",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -28,7 +28,6 @@
     "@types/compression": "^1.7.0",
     "@types/cookie-session": "^2.0.41",
     "@types/cors": "^2.8.6",
-    "@types/express": "^4.17.7",
     "@types/helmet": "^0.0.47",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/morgan": "^1.9.1",
