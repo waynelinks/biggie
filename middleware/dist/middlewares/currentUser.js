@@ -8,7 +8,7 @@ exports.currentUser = (contract) => (req, res, next) => {
     if (!((_a = req.session) === null || _a === void 0 ? void 0 : _a.jwt))
         return next();
     try {
-        const payload = jsonwebtoken_1.verify(req.session.jwt, process.env.JWT_SECRET);
+        const payload = jsonwebtoken_1.verify(req.session.jwt, process.env.ACCESS_TOKEN_SECRET);
         req.currentUser = payload;
     }
     catch (err) { }
