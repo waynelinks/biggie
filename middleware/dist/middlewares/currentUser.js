@@ -2,9 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.currentUser = void 0;
 const jsonwebtoken_1 = require("jsonwebtoken");
-exports.currentUser = (contract) => (req, res, next) => {
+exports.currentUser = (req, res, next) => {
     var _a;
-    UserPayload.shape = contract;
     if (!((_a = req.session) === null || _a === void 0 ? void 0 : _a.jwt))
         return next();
     try {

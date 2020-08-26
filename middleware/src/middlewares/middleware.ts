@@ -19,7 +19,7 @@ export const middleware = (app: any, express: any) => {
   app.use(
     cookieSession({
       signed: false,
-      secure: process.env.NODE_ENV !== 'tests',
+      secure: process.env.NODE_ENV !== 'test',
     }),
   )
 }
