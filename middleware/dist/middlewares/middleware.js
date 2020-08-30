@@ -21,6 +21,6 @@ exports.middleware = (app, express) => {
     }
     app.use(cookie_session_1.default({
         signed: false,
-        secure: process.env.NODE_ENV !== 'tests',
+        secure: process.env.NODE_ENV !== 'test',
     }));
 };

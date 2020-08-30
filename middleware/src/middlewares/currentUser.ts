@@ -3,11 +3,8 @@ import { verify } from 'jsonwebtoken'
 
 interface IUserPayload {
   _id?: string
-  firstName?: string
-  lastName?: string
+  name?: string
   email: string
-  password: string
-  role?: string
 }
 
 declare global {
