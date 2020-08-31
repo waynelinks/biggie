@@ -2,7 +2,6 @@ import cors from 'cors'
 import helmet from 'helmet'
 import compression from 'compression'
 import morgan from 'morgan'
-import cookieSession from 'cookie-session'
 
 export const middleware = (app: any, express: any) => {
   app.set('trust proxy', true)
@@ -15,11 +14,4 @@ export const middleware = (app: any, express: any) => {
   if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
   }
-
-  app.use(
-    cookieSession({
-      signed: false,
-      secure: process.env.NODE_ENV !== 'test',
-    }),
-  )
 }
