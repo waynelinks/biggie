@@ -1,11 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 interface IUserPayload {
     _id?: string;
-    firstName?: string;
-    lastName?: string;
+    name?: string;
     email: string;
-    password: string;
-    role?: string;
 }
 declare global {
     namespace Express {
